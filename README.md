@@ -8,7 +8,7 @@ This is a personal use to implement a transaction to ACUMATICA ERP Web Service E
 
 ### Dependencies
 
-* Neeb php 7.8+
+* Need php 7.8+
 
 ### Installing
 * composer require acumaticalibrary/noobgrammer:master-dev
@@ -89,7 +89,7 @@ This is a personal use to implement a transaction to ACUMATICA ERP Web Service E
 
 ## License
 
-This project is licensed under the [Greggy] License - see the LICENSE.md file for details
+This project is licensed under the Greggy License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
