@@ -48,8 +48,10 @@ This is a personal use to implement a transaction to ACUMATICA ERP Web Service E
         ];
 
         $requestData = [
+            'acumaticaLoginEndPoint' => '#',
+            'acumaticaLogoutEndPoint' => '#',
             'Login_Acumatica' => [
-                'name' => 'yourUsername',
+               			 'name' => 'yourUsername',
 				'password'=> 'yourPassword',
 				'tenant'=> 'yourtenant',
 				"branch" => '',
@@ -66,6 +68,7 @@ This is a personal use to implement a transaction to ACUMATICA ERP Web Service E
      return json_encode($this->acumatica->acumatica_Api($requestData));
 
    Access for The Odata
+
    1.) Go to your Generic Inquiry and Create a Generic Inquiry
    2.) after create a Generic Inquiry tick the odata  then update
    3. go to your php app and use this. 
@@ -78,15 +81,8 @@ This is a personal use to implement a transaction to ACUMATICA ERP Web Service E
         'password'=> 'yourPassword',
       ];
 		
-		return  $this->acumatica->odataParse($url);
+       return  $this->acumatica->odataParse($url);
 ```
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
 ## Version History
 * 0.1
     * Initial Release
