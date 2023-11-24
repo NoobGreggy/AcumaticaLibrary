@@ -48,8 +48,10 @@ This is a personal use to implement a transaction to ACUMATICA ERP Web Service E
         ];
 
         $requestData = [
+            'acumaticaLoginEndPoint' => '#',
+            'acumaticaLogoutEndPoint' => '#',
             'Login_Acumatica' => [
-                'name' => 'yourUsername',
+               			 'name' => 'yourUsername',
 				'password'=> 'yourPassword',
 				'tenant'=> 'yourtenant',
 				"branch" => '',
