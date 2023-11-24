@@ -1,29 +1,84 @@
-# Project Title
-
-Simple overview of use/purpose.
+# Acumatica Library for PHP
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+This is a personal use to implement a transaction to ACUMATICA ERP Web Service Endpoint Hope it will help.
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Neeb php 7.8+
 
 ### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* composer require acumaticalibrary/noobgrammer:master-dev
 
 ### Executing program
 
 * How to run the program
 * Step-by-step bullets
 ```
-code blocks for commands
+ $datafield = [
+          "CustomerID" => [ "value" => "#"],
+          "CustomerName" => [ "value" => "#"],
+          "CustomerClass" => [ "value" => "INDVS"],
+          "Status" => [ "value" => "#"],
+          "StatementCycleID" => [ "value" => '#'],
+          "FinancingDimensionCustomer" => [ "value" => true],
+          "CashDiscountAccount" => [ "value" => "#"],
+          "CashDiscountSub" => [ "value" => "#"],
+          "ARAccount" => [ "value" => "#"],
+          "ARSub" => [ "value" => "#"],
+          "SalesAccount" => [ "value" => "#"],
+          "SalesSub" => [ "value" => "#"],
+          'MainContact' => [
+                'CompanyName' => [ "value" => "#"],
+                'DisplayName'=>   [ "value" => "#"],
+                'FirstName'=> [ "value" => "#"],
+                "LastName" => [ "value" => "#"],
+                "DateofBirth" => [ "value" => "#"],
+                "Phone1" => [ "value" => "#"],
+                "Calendar" => [ "value" => "#"],
+                "AddressLine2" => [ "value" => "#"],
+                "AddressLine1" => [ "value" => "#"],
+                "City" => [ "value" => "#"],
+                "State" => [ "value" => "#"],
+                "Country" => [ "value" => "#"]
+            ]
+        ];
+
+        $requestData = [
+            'Login_Acumatica' => [
+                'name' => 'yourUsername',
+				'password'=> 'yourPassword',
+				'tenant'=> 'yourtenant',
+				"branch" => '',
+				"locale" => ""
+            ],
+            'Body_Acumatica' =>[
+               'Action' => 'PUT', 
+               'URL' => 'YourAcumaticaEndPoint',
+               'data' => $datafield
+            ]
+        ];
+
+
+     return json_encode($this->acumatica->acumatica_Api($requestData));
+
+   Access for The Odata
+   1.) Go to your Generic Inquiry and Create a Generic Inquiry
+   2.) after create a Generic Inquiry tick the odata  then update
+   3. go to your php app and use this. 
+
+      $url = '#';
+
+      $odataServices = [
+        'URL' => 'YourAcumaticaEndPoint',
+        'name' => 'yourUsername',
+        'password'=> 'yourPassword',
+      ];
+		
+		return  $this->acumatica->odataParse($url);
 ```
 ## Help
 
