@@ -1,0 +1,26 @@
+{
+    "name": "acumaticalibrary/noobgrammer",
+    "description": "Acumatica with Guzzle implimentation",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Acumaticalibrary\\Noobgrammer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gregg",
+            "email": "codeygreggy@gmail.com"
+        }
+    ],
+    "require": {
+        "acumatica/acumaticalibrary-noobgreggy": "dev-master",
+        "acumaticalibrary/acumaticalibrary-noobgreggy": "dev-master",
+        "guzzlehttp/guzzle": "^7.8.0"
+       
+    },
+    "version": "1.0.0"
+}
