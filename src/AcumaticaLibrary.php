@@ -163,12 +163,12 @@ class AcumaticaLibrary {
     }
 
 
-    public function odataParse($odataServiceUrl){
+    public function odataParse($odataServices){
 
         $guzzle = new Guzzle();
 
-        $response = $guzzle->request('GET', $odataServiceUrl, [
-            'auth' => ['210000982', 'P@ssw0rd'],
+        $response = $guzzle->request('GET', $odataServices['URL'], [
+            'auth' => [$odataServices['name'], $odataServices['password']],
             'http_errors' => false
         ]);
 
