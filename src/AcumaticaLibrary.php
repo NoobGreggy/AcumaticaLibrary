@@ -18,7 +18,7 @@ class AcumaticaLibrary {
     public function acumatica_Api($requestData){
 
 
-        $login_acumatica = $this->acumatica_login($requestData['Login_Acumatica']);
+        $login_acumatica = $this->acumatica_login($requestData['Login_Acumatica'],$requestData['acumaticaLoginEndPoint']);
 
 
         $response = [];
@@ -38,7 +38,7 @@ class AcumaticaLibrary {
                     'data' => $request_acumatica['data']
                 ];
 
-                $this->acumatica_logout();
+                $this->acumatica_logout($requestData['acumaticaLogoutEndPoint']);
             }else{
 
                 $response = [
@@ -46,7 +46,7 @@ class AcumaticaLibrary {
                     'message' => $request_acumatica['message']
                 ];
 
-                $this->acumatica_logout();
+                $this->acumatica_logout($requestData['acumaticaLogoutEndPoint']);
             }
 
         }else{
@@ -56,7 +56,7 @@ class AcumaticaLibrary {
                 'message' => $login_acumatica['message']
             ];
 
-            $this->acumatica_logout();
+            $this->acumatica_logout($requestData['acumaticaLogoutEndPoint']);
         }
 
         return $response;
@@ -64,10 +64,7 @@ class AcumaticaLibrary {
 
     }
 
-    private function acumatica_login($logininfo){
-
-        $resource = 'https://ropali3-adamco.acumatica.com/entity/Auth/login';
-
+    private function acumatica_login($logininfo,$resource){
 
         $response = $this->guzzle->request('POST', $resource, [
             'json' => $logininfo,
@@ -130,11 +127,7 @@ class AcumaticaLibrary {
     }
 
 
-    private function acumatica_logout(){
-
-
-        $resource = 'https://ropali3-adamco.acumatica.com/entity/Auth/logout';
-
+    private function acumatica_logout($resource){
 
         $response = $this->guzzle->request('POST', $resource, [
             'cookies' => $this->cookies,
